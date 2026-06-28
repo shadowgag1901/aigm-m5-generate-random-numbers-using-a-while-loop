@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Numbers with While Loop</title>
+</head>
+<body>
+
+    <h1>Generate Random Numbers using While Loop</h1>
+
+    <h2>Basic While Loop</h2>
+    <p>Repeats code while a condition is true.</p>
+    <pre>let i = 1;
+while (i <= 5) {
+    console.log(i);
+    i++;
+}
+// prints: 1 2 3 4 5</pre>
+
+    <h2>Math.random()</h2>
+    <p>Generates a random number between 0 and 1.</p>
+    <pre>let rand = Math.random();
+console.log(rand);  // e.g., 0.7342</pre>
+
+    <h2>Random Integer in a Range</h2>
+    <p>Formula: Math.floor(Math.random() * range) + min</p>
+    <pre>// Random between 1 and 10
+let num = Math.floor(Math.random() * 10) + 1;
+console.log(num);  // e.g., 7</pre>
+
+    <h2>Generate Until a Target</h2>
+    <p>Keep generating until we get a specific number.</p>
+    <pre>let target = 5;
+let attempts = 0;
+let roll = 0;
+
+while (roll !== target) {
+    roll = Math.floor(Math.random() * 10) + 1;
+    attempts++;
+    console.log("Roll: " + roll);
+}
+console.log("Got 5 in " + attempts + " attempts");</pre>
+
+    <h2>Generate N Random Numbers</h2>
+    <p>Use a counter with while loop.</p>
+    <pre>let count = 1;
+while (count <= 5) {
+    let rand = Math.floor(Math.random() * 100) + 1;
+    console.log("Random #" + count + ": " + rand);
+    count++;
+}</pre>
+
+    <h2>Do-While Loop</h2>
+    <p>Runs at least once, then checks condition.</p>
+    <pre>let num;
+do {
+    num = Math.floor(Math.random() * 6) + 1;
+    console.log("Dice: " + num);
+} while (num !== 6);
+// keeps rolling until 6 appears</pre>
+
+</body>
+</html>
