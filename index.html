@@ -1,62 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Random Numbers with While Loop</title>
-</head>
+<head><title>Random Numbers with While</title></head>
 <body>
 
-    <h1>Generate Random Numbers using While Loop</h1>
+<h1>Random Numbers with While Loop</h1>
 
-    <h2>Basic While Loop</h2>
-    <p>Repeats code while a condition is true.</p>
-    <pre>let i = 1;
-while (i <= 5) {
-    console.log(i);
-    i++;
-}
-// prints: 1 2 3 4 5</pre>
+<h2>Random Integer 1-10</h2>
+<p id="r1"></p>
 
-    <h2>Math.random()</h2>
-    <p>Generates a random number between 0 and 1.</p>
-    <pre>let rand = Math.random();
-console.log(rand);  // e.g., 0.7342</pre>
+<h2>5 Random Numbers</h2>
+<p id="r2"></p>
 
-    <h2>Random Integer in a Range</h2>
-    <p>Formula: Math.floor(Math.random() * range) + min</p>
-    <pre>// Random between 1 and 10
+<h2>Roll Dice Until 6</h2>
+<p id="r3"></p>
+
+<script>
 let num = Math.floor(Math.random() * 10) + 1;
-console.log(num);  // e.g., 7</pre>
+document.getElementById("r1").innerText = num;
 
-    <h2>Generate Until a Target</h2>
-    <p>Keep generating until we get a specific number.</p>
-    <pre>let target = 5;
-let attempts = 0;
-let roll = 0;
-
-while (roll !== target) {
-    roll = Math.floor(Math.random() * 10) + 1;
-    attempts++;
-    console.log("Roll: " + roll);
-}
-console.log("Got 5 in " + attempts + " attempts");</pre>
-
-    <h2>Generate N Random Numbers</h2>
-    <p>Use a counter with while loop.</p>
-    <pre>let count = 1;
+let out2 = "";
+let count = 1;
 while (count <= 5) {
-    let rand = Math.floor(Math.random() * 100) + 1;
-    console.log("Random #" + count + ": " + rand);
+    out2 += Math.floor(Math.random() * 100) + 1 + " ";
     count++;
-}</pre>
+}
+document.getElementById("r2").innerText = out2;
 
-    <h2>Do-While Loop</h2>
-    <p>Runs at least once, then checks condition.</p>
-    <pre>let num;
+let dice, tries = "";
+let attempt = 0;
 do {
-    num = Math.floor(Math.random() * 6) + 1;
-    console.log("Dice: " + num);
-} while (num !== 6);
-// keeps rolling until 6 appears</pre>
+    dice = Math.floor(Math.random() * 6) + 1;
+    attempt++;
+    tries += "Roll " + attempt + ": " + dice + " | ";
+} while (dice !== 6);
+document.getElementById("r3").innerText = tries;
+</script>
 
 </body>
 </html>
